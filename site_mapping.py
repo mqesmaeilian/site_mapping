@@ -1,9 +1,3 @@
-"""
-Muhammad Sadeq Esmaeilian
-Project
-"""
-
-
 from urllib.request import urlopen,FancyURLopener
 import bs4
 import re
@@ -115,85 +109,11 @@ def graph_draw(adjajency_matrix):
     nx.draw_random(graph)
     plt.show()
 
+
 started_time = time.time()
 m_url = url()
 crawler(m_url)
 
-
-# adjajency_matrix = adjajency_matrix_builder(list_of_links,connection)
-# graph_draw(adjajency_matrix)
-
-
-
-
-
-# print(a)
-# def crawler(links):
-#     counter = 0
-#     main_lst = []
-#     for link in links:
-#         if link[1] == 'F':
-#             url = link[0]
-#             main_domain = tld.get_fld(url)
-#             response = urlopen(url)
-#             soup = bs4.BeautifulSoup(response)
-#             counter += 1
-#             lst = []
-#             for link in soup.findAll('a', attrs={'href': re.compile("^(/)")}):
-#                 a = link.get('href')
-#                 if '//' not in a:
-#                     created_url = url + a
-#                     description = [created_url, 'F']
-#                     lst.append(description)
-#             for link in soup.findAll('a', attrs={'href': re.compile('^https://')}):
-#                 a = link.get('href')
-#                 if main_domain in a:
-#                     description = [a, 'F']
-#                     lst.append(description)
-#             for link in soup.findAll('a', attrs={'href': re.compile('^http://')}):
-#                 a = link.get('href')
-#                 if main_domain in a:
-#                     description = [a, 'F']
-#                     lst.append(description)
-#             link[1] = 'T'
-#             main_des = str(counter) + link[0] + 'T'
-#             main_lst.append(main_des)
-#             print("Main_lst :", main_lst, '\n lst :', lst)
-#             return main_des, lst, crawler(lst)
-#         else:
-#             pass
-
-#
-# list_of_links = []
-# adjajency_matrix = [[]]
-# def crawler(links):
-#     lst = []
-#     counter = 0
-#     global list_of_links, adjajency_matrix
-#     for link in links:
-#         if link not in list_of_links:
-#             list_of_links.append(link)
-#             adjajency_matrix[counter].append(1)
-#             for i in adjajency_matrix:
-#                 i.append(0)
-#
-            # main_domain = tld.get_fld(link)
-            # response = urlopen(link)
-            # # soup = bs4.BeautifulSoup(response)
-            # for link in soup.findAll('a', attrs={'href': re.compile("^(/)")}):
-            #     a = link.get('href')
-            #     if '//' not in a:
-            #         m_url = link + a
-            #         lst.append(m_url)
-            # for link in soup.findAll('a', attrs={'href': re.compile('^https://')}):
-            #     a = link.get('href')
-            #     if main_domain in a:
-            #         lst.append(a)
-            # for link in soup.findAll('a', attrs={'href': re.compile('^http://')}):
-            #     a = link.get('href')
-            #     if main_domain in a:
-            #         lst.append(a)
-#         else:
 
 
 
